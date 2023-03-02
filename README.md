@@ -98,7 +98,7 @@ cargo rustc --target thumbv7m-none-eabi -- --emit=obj
 # should use cargo nm, but does not work as expected
 /Users/mrzhao/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/bin/llvm-nm target/thumbv7m-none-eabi/debug/deps/rust_embedded-b037a74e82f903c6.o
 ```
-![nm](rt/images/nm.png)
+![nm](images/nm.png)
 
 ## Language Items
 编译器通常会假设可执行的文件中有一些预设的symbol可以调用。比如
@@ -122,7 +122,7 @@ cargo build
 ```shell
 cargo objdump --bin rust-embedded -- -d --no-show-raw-insn
 ```
-![memory layout](rt/images/memory-layout.png)
+![memory layout](images/memory-layout.png)
 
 ### Vec table
 
@@ -130,7 +130,7 @@ cargo objdump --bin rust-embedded -- -d --no-show-raw-insn
 cargo objdump --bin rust-embedded -- -s --section .vector_table
 ```
 
-![vec-table](rt/images/vec-table.png)
+![vec-table](images/vec-table.png)
 
 ### start virtual microcontroller
 ```shell
