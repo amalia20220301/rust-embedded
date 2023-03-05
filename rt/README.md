@@ -10,6 +10,11 @@ cargo build --target=wasm32-unknown-unknown --release
 ```
 ![wasm](./images/wasm.png)
 
+被编译成功的代码中没有add这个函数名，而是被编译成了stack pointer，需要使用#[no_mangle]
+![add](./images/add.png)
+
+rustc 默认使用的是rust的ABI，编译成的目标代码的函数名可能会随着版本而变得不一致，所以推荐使用稳定的C ABI。
+![c](./images/c.png)
 
 ### Setup WebAssembly Binary Toolkit
 
