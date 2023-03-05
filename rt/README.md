@@ -29,6 +29,10 @@ rustc 默认使用的是rust的ABI，编译成的目标代码的函数名可能�
 用于快速，高效地编译WebAssembly. 提供的wasm-dis，类似于wasm-opt. 但是wasm-dis生成的是WAST(WebAssembly S-Expression Text Format),
 而wasm-opt生成的是标准的WAT(WebAssembly Text Format).
 
+### Inspect target
+```shell
+cargo install twiggy
+```
 ### Info
 
 WebAssembly 通常被作为library，但是在[WASI](https://wasi.dev/) 的上下文中会作为executable。
