@@ -1,4 +1,8 @@
-const importObj = {};
+const importObj = {
+    Math: {
+        random: () => Math.random(),
+    }
+};
 
 // Node
 const data = require("fs").readFileSync("./target/wasm32-unknown-unknown/release/rt.wasm");
