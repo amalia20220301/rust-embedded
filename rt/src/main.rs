@@ -1,19 +1,23 @@
-#![allow(unused)]
 #![no_main]
 #![no_std]
 
-#![allow(unused)]
-#![feature(lang_items)]
+use core::panic::PanicInfo;
 
+// The reset handler
+#[no_mangle]
+pub unsafe extern "C" fn Reset() -> ! {
+    let _x = 42;
 
-fn main() {
-    use core::panic::PanicInfo;
+    // can't return so we go into an infinite loop here
+    loop {}
+}
 
-    #[panic_handler]
-    fn panic(_panic: &PanicInfo<'_>) -> ! {
-        loop {}
-    }
+// The reset vector, a pointer into the reset handler
+#[link_section = ".vector_table.reset_vector"]
+#[no_mangle]
+pub static RESET_VECTOR: unsafe extern "C" fn() -> ! = Reset;
 
-    #[lang = "eh_personality"]
-    extern "C" fn eh_personality() {}
+#[panic_handler]
+fn panic(_panic: &PanicInfo<'_>) -> ! {
+    loop {}
 }
