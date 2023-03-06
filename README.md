@@ -98,7 +98,7 @@ cargo rustc --target thumbv7m-none-eabi -- --emit=obj
 # should use cargo nm, but does not work as expected
 /Users/mrzhao/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/bin/llvm-nm target/thumbv7m-none-eabi/debug/deps/rust_embedded-b037a74e82f903c6.o
 ```
-![nm](images/nm.png)
+![nm](rt/images/nm.png)
 
 ## Language Items
 编译器通常会假设可执行的文件中有一些预设的symbol可以调用。比如
