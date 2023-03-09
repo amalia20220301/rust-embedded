@@ -9,7 +9,7 @@ edition = "2021"
 
 [[bin]]
 name = "rt"
-path = "src/main.rs"
+path = "src/lib.rs"
 
 [profile.dev]
 panic = "abort"

@@ -73,3 +73,10 @@ arm-none-eabi-gdb -q target/thumbv7m-none-eabi/debug/rt
 ```
 ## Reference Doc
 https://docs.rust-embedded.org/embedonomicon/memory-layout.html
+
+
+## 异常处理
+常见的异常场景- 中断，比如Arm Cortex-M的中断就是用一个存在一个中断处理表中，里面记录了各种中断处理的handler指针。
+处理器会需要预知中断表的地址。所以在rust中实现中断处理的时候，需要确认handler的地址，但是是weak的，用户可以在编译器修改其内部逻辑。
+### 如何处理中断？
+挂起当前的调用栈，执行中断handler，执行完成之后，重新唤起挂起的执行。
