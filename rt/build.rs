@@ -1,3 +1,4 @@
+// put the link script in it's search path.
 use std::{env, error::Error, fs::File, io::Write, path::PathBuf};
 
 fn main() -> Result<(), Box<dyn Error>> {

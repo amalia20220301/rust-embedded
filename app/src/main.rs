@@ -1,10 +1,14 @@
-#![no_std]
+#![feature(core_intrinsics)]
 #![no_main]
+#![no_std]
 
-extern crate rt;
+use core::intrinsics;
 
-#[no_mangle]
-pub fn main(){
-    let _x=42;
-    loop {}
+use rt::entry;
+
+entry!(main);
+
+fn main() -> ! {
+    // this executes the undefined instruction (UDF) and causes a HardFault exception
+    intrinsics::abort()
 }

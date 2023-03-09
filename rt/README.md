@@ -62,6 +62,11 @@ cargo objdump --bin rt -- -s --section .vector_table
 
 ![vec-table](images/vec-table.png)
 
+### 构建rt为library
+```shell
+cargo build --lib
+```
+
 ### start virtual microcontroller
 ```shell
 qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -gdb tcp::3333 -S -nographic -kernel target/thumbv7m-none-eabi/debug/rt
